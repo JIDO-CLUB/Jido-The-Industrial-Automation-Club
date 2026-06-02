@@ -10,7 +10,7 @@
     
     --accent: #00e5ff;
     --accent-hover: #00b8d4;
-    --accent-glow: rgba(0, 229, 255, 0.18);
+    --accent-glow: rgba(0, 229, 255, 0.25);
     
     --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     --transition-slow: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -129,7 +129,7 @@ p { color: var(--text-secondary); margin-bottom: 1rem; }
    3. HEADER & NAV
    ========================================= */
 header {
-    background: rgba(15, 17, 21, 0.8);
+    background: rgba(15, 17, 21, 0.7);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     padding: 15px 5%;
@@ -143,8 +143,8 @@ header {
 }
 
 .logo img { 
-    height: 60px; 
-    width: auto; 
+    height: 80px; 
+    width: 120px; 
     border-radius: 6px; 
     transition: var(--transition-smooth);
 }
@@ -189,16 +189,16 @@ header {
 /* =========================================
    4. HOME PAGE & SLIDER
    ========================================= */
-.home-hero { margin-bottom: 40px; }
+.home-hero { margin-bottom: 60px; }
 
 .slider-container {
     width: 100%;
-    height: 55vh;
-    min-height: 400px;
+    height: 65vh;
+    min-height: 450px;
     overflow: hidden;
     position: relative;
     border-radius: 16px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
     touch-action: pan-y; 
 }
 
@@ -238,9 +238,9 @@ header {
 .slide.active .slide-content { transform: translateY(0); }
 
 .slide-content h3 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     margin-bottom: 15px;
     text-shadow: 0 4px 20px rgba(0,0,0,0.8);
 }
@@ -248,22 +248,18 @@ header {
 .slider-controls {
     position: absolute; bottom: 30px; left: 50%;
     transform: translateX(-50%);
-    display: flex; gap: 12px; z-index: 20;
+    display: flex; gap: 15px; z-index: 20;
 }
 
 .slider-dot {
-    width: 12px; height: 12px;
-    border-radius: 50%;
-    background-color: rgba(255,255,255,0.3);
+    width: 30px; height: 4px;
+    border-radius: 2px;
+    background-color: rgba(255,255,255,0.2);
     cursor: pointer;
     transition: var(--transition-smooth);
 }
 
-.slider-dot.active { 
-    background-color: var(--accent); 
-    width: 35px; 
-    border-radius: 6px;
-}
+.slider-dot.active { background-color: var(--accent); width: 45px; }
 
 .club-info-grid {
     display: grid;
@@ -276,12 +272,6 @@ header {
     padding: 30px;
     border-radius: 12px;
     border: 1px solid var(--border-color);
-    transition: var(--transition-smooth);
-}
-
-.info-card:hover {
-    border-color: rgba(0, 229, 255, 0.3);
-    background-color: rgba(255, 255, 255, 0.04);
 }
 
 /* =========================================
@@ -405,7 +395,7 @@ header {
     background-color: var(--secondary-bg);
     max-width: 700px;
     width: 90%;
-    max-height: 85vh; 
+    max-height: 85vh; /* Prevents going off screen */
     border-radius: 20px;
     border: 1px solid var(--border-color);
     padding: 40px;
@@ -413,8 +403,8 @@ header {
     transform: translateY(30px);
     transition: var(--transition-smooth);
     display: flex;
-    flex-direction: column; 
-    overflow: hidden; 
+    flex-direction: column; /* Stacks title and description vertically */
+    overflow: hidden; /* Stops whole box from scrolling */
 }
 
 .modal-overlay.open .modal-content { transform: translateY(0); }
@@ -426,10 +416,12 @@ header {
     font-size: 36px;
     cursor: pointer;
     color: var(--text-secondary);
-    z-index: 100;         
-    width: 44px;          
-    height: 44px;         
-    display: flex;        
+    
+    /* The Fixes: */
+    z-index: 100;         /* Ensures it always stays on top of headings/images */
+    width: 44px;          /* Clean mobile-friendly tap target width */
+    height: 44px;         /* Clean mobile-friendly tap target height */
+    display: flex;        /* Centers the '×' perfectly inside the tap target box */
     align-items: center;
     justify-content: center;
     line-height: 1;
@@ -440,6 +432,7 @@ header {
     color: var(--accent);
 }
 
+/* Targets the description to make it scrollable */
 #modalDesc {
     overflow-y: auto;
     flex-grow: 1; 
@@ -450,6 +443,7 @@ header {
 #modalDesc::-webkit-scrollbar { width: 6px; }
 #modalDesc::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
 
+/* Image Gallery inside Modal */
 .modal-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -469,6 +463,7 @@ header {
 
 .modal-gallery img:hover { transform: scale(1.05); }
 
+/* Full-Screen Lightbox */
 .lightbox {
     display: none; position: fixed; z-index: 3000;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -555,82 +550,46 @@ footer {
    10. PERFECTED MOBILE RESPONSIVENESS
    ========================================= */
 @media screen and (max-width: 1024px) {
-    .slide-content h3 { font-size: 2.3rem; }
+    .slide-content h3 { font-size: 2.5rem; }
 }
 
 @media screen and (max-width: 768px) {
-    /* ... keep your existing main and heading styles ... */
+    main { padding-top: 100px; }
+    h2 { font-size: 2rem; }
+    
+    .menu-toggle { display: flex; }
 
-    /* PERFECT RECTANGULAR ASPECT RATIO FOR MOBILE */
-    .slider-container { 
-        height: 250px;           /* Fixed crisp rectangular height */
-        min-height: auto;        /* Removes the tall min-height constraint */
-        box-shadow: 0 8px 24px rgba(0,0,0,0.6);
-        border-radius: 12px;     /* Keeps a sleek rounded corner look */
-    }
-    
-    /* REPOSITION TEXT OVERLAY */
-    .slide-content {
-        padding-bottom: 40px !important; /* Lifts heading slightly above dots */
-    }
-
-    .slide-content h3 { 
-        font-size: 1.4rem;       /* Scaled down to prevent text wrapping splits */
-        letter-spacing: 1px;
-        text-transform: uppercase;
-    }
-    
-    /* REFINED DOTS FOR MOBILE */
-    .slider-controls {
-        bottom: 12px;            /* Tucks indicators cleanly at the very bottom */
-        gap: 8px;
-    }
-    
-    .slider-dot {
-        width: 6px;
-        height: 6px;
-    }
-    
-    .slider-dot.active {
-        width: 22px;
+    .nav-links {
+        position: fixed; top: 0; right: 0;
+        height: 100vh; width: 75%;
+        background: rgba(15, 17, 21, 0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        flex-direction: column; justify-content: center; align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        border-left: 1px solid var(--border-color);
+        box-shadow: -10px 0 30px rgba(0,0,0,0.5);
     }
 
-    /* ... keep your existing info-card and button styles ... */
-}
-    
-    /* Elegant Info Cards layout for Touch Screen */
-    .club-info-grid {
-        gap: 16px;
-    }
-    
-    .info-card {
-        padding: 22px 20px;
-        background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
-        border-radius: 10px;
-    }
-    
-    .info-card strong {
-        font-size: 0.9rem;
-        display: block;
-        margin-bottom: 4px;
-    }
-    
-    .info-card p {
-        font-size: 0.95rem;
-        margin-bottom: 0;
-    }
+    .nav-links.active { transform: translateX(0); }
+    .nav-links li a { font-size: 1.3rem; }
 
+    .menu-toggle.active .bar:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.active .bar:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+    .slider-container { height: 50vh; min-height: 350px; }
+    .slide-content h3 { font-size: 1.8rem; }
+    
     .apply-options-header h2 { font-size: 2.2rem; }
+    
     .btn { width: 100%; padding: 16px; margin-bottom: 10px; }
     .apply-buttons-group { flex-direction: column; }
 }
 
 @media screen and (max-width: 480px) {
-    .section-box { 
-        padding: 24px 20px; 
-        margin-bottom: 24px;
-        border-radius: 12px;
-    }
+    .section-box { padding: 25px 20px; }
     .modern-form .form-row { grid-template-columns: 1fr; gap: 0; margin-bottom: 0; }
     .modern-form .form-group { margin-bottom: 25px; }
     .member-img-container { height: 200px; }
