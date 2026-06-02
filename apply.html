@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Apply | JIDO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="jidohomelogo.jpg">
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="jidologo.png" alt="JIDO Logo"></div>
+        <nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="members.html">Members</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="tutorials.html">Tutorials</a></li>
+                <li><a href="apply.html">Apply</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="apply-options-header">
+            <h2>Join Our Movement</h2>
+            <p>Select an option below to apply for upcoming events or leadership positions.</p>
+        </div>
+
+        <div class="apply-buttons-group section-box">
+            <button class="btn btn-primary" id="applyEventBtn" disabled>Apply for Event</button>
+            <button class="btn btn-secondary" disabled title="Recruitment currently closed.">Apply for Executive</button>
+        </div>
+
+        <div class="form-box section-box" id="eventFormBox">
+            <h2>Event Registration</h2>
+            <p style="margin-bottom: 25px; color: var(--text-secondary);">Please fill in all details accurately. Total team capacity is limited to 25 teams.</p>
+            
+            <form id="modernEventForm" class="modern-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first_name">First Name</label>
+                        <input type="text" id="first_name" name="first_name" class="input-control" required placeholder="John">
+                    </div>
+                    <div class="form-group">
+                        <label for="last_name">Last Name</label>
+                        <input type="text" id="last_name" name="last_name" class="input-control" required placeholder="Doe">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone_number">Phone Number</label>
+                        <input type="tel" id="phone_number" name="phone_number" class="input-control" required placeholder="+91 9876543210" pattern="[0-9]{10}">
+                    </div>
+                    <div class="form-group">
+                        <label for="college_email">College Email ID</label>
+                        <input type="email" id="college_email" name="college_email" class="input-control" required placeholder="john.doe@college.edu">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="branch">Branch</label>
+                        <input type="text" id="branch" name="branch" class="input-control" required placeholder="Robotics & Automation">
+                    </div>
+                    <div class="form-group">
+                        <label for="roll_number">Roll Number</label>
+                        <input type="text" id="roll_number" name="roll_number" class="input-control" required placeholder="RA23001">
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 30px;">
+                    <label for="participants">Number of Team Participants</label>
+                    <select id="participants" name="participants" class="input-control" required>
+                        <option value="" disabled selected>Select Participant Count</option>
+                        <option value="1">1 (Solo)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Team Max)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; height: 55px; font-size: 1rem;">Confirm Registration</button>
+            </form>
+            
+            <div id="responseMessage"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 JIDO - The Industrial Automation Club. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

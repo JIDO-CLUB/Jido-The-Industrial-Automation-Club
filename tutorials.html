@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorials | JIDO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="jidohomelogo.jpg">
+    <style>
+        /* Neutral, theme-agnostic styling that inherits your global CSS */
+        .tutorials-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .tutorials-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .tutorials-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            /* Inherits color from your global styles */
+        }
+
+        .tutorials-header p {
+            opacity: 0.8; /* Subtle text without hardcoding grey */
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            line-height: 1.6;
+        }
+
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .tutorial-card {
+            background: rgba(128, 128, 128, 0.05); /* Subtle transparent background */
+            border: 1px solid rgba(128, 128, 128, 0.2); /* Neutral border */
+            border-radius: 8px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .tutorial-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(128, 128, 128, 0.5);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+        
+        .tutorial-card h3 {
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 600;
+            /* Inherits color from your global styles */
+        }
+        
+        .tutorial-btn {
+            display: inline-block;
+            background-color: transparent;
+            color: inherit; /* Inherits your theme's text color */
+            text-decoration: none;
+            padding: 10px 24px;
+            border: 2px solid rgba(128, 128, 128, 0.4);
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .tutorial-btn:hover {
+            background-color: rgba(128, 128, 128, 0.1);
+            border-color: currentColor; /* Matches your theme's active text color */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><img src="jidologo.png" alt="JIDO Logo"></div>
+        <nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="members.html">Members</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="tutorials.html">Tutorials</a></li>
+                <li><a href="apply.html">Apply</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Reusing your section-box class so it matches existing paddings/margins -->
+        <div class="section-box tutorials-container">
+            <div class="tutorials-header">
+                <h2>Software to Know for Our Events</h2>
+                <p>Check out these YouTube playlists to master the essential tools we use in JIDO.</p>
+            </div>
+            
+            <div class="software-grid">
+                
+                <!-- Tinkercad -->
+                <div class="tutorial-card">
+                    <h3>Tinkercad</h3>
+                    <a href="https://youtube.com/playlist?list=PLeVrdakJu3M43jB2WqKEL4_Hhn94LpOMT&si=A6KQSiTKyegMvQG6" target="_blank" class="tutorial-btn">View Playlist</a>
+                </div>
+
+                <!-- MATLAB -->
+                <div class="tutorial-card">
+                    <h3>MATLAB</h3>
+                    <a href="https://youtube.com/playlist?list=PL7CAABC40B2825C8B&si=CipP3OZMB7xhzGT3" target="_blank" class="tutorial-btn">View Playlist</a>
+                </div>
+
+                <!-- Webots -->
+                <div class="tutorial-card">
+                    <h3>Webots</h3>
+                    <a href="https://youtube.com/playlist?list=PLt69C9MnPchlZl4FAZ7z-wBhFpUtwJvEG&si=QPa1qoBa_Zbaagbb" target="_blank" class="tutorial-btn">View Playlist</a>
+                </div>
+
+                <!-- Autodesk Fusion -->
+                <div class="tutorial-card">
+                    <h3>Autodesk Fusion</h3>
+                    <a href="https://youtube.com/playlist?list=PLLm7Yjr9z_z07ohtjFGkA5w-j_NMj8B3J&si=i6RDzZ4fOhFKLr78" target="_blank" class="tutorial-btn">View Playlist</a>
+                </div>
+
+                <!-- Robotic Arm - 3D Modelling -->
+                <div class="tutorial-card">
+                    <h3>Robotic Arm 3D</h3>
+                    <a href="https://youtube.com/playlist?list=PL_gRt21XQOIkdyAbR8tRXAgVEyxzADyul&si=PpzsB5uNpFoEoKXq" target="_blank" class="tutorial-btn">View Playlist</a>
+                </div>
+
+                <!-- MIT App Inventor -->
+                <div class="tutorial-card">
+                    <h3>MIT App Inventor</h3>
+                    <a href="https://youtube.com/playlist?list=PLgikoIjnSj5bn8pnRun824NzFQ5bmKfSJ&si=4LX4iddQ0qRq1xVw" target="_blank" class="tutorial-btn">View Playlist</a>
+                </div>
+                <!-- Aurdino-->
+                <div class="tutorial-card">
+                    <h3>Aurdino</h3>
+                    <a href="https://youtube.com/playlist?list=PLlBVuTSjOrclb0iCMSRpS_H1lSrlSVeEm&si=Iidnj57oNJ6HoV9x" target="_blank" class="tutorial-btn">View Playlist</a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 JIDO - The Industrial Automation Club. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

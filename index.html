@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>JIDO | The Industrial Automation Club</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="jidohomelogo.jpg">
+    <style>
+        /* CSS to style the hero slider with images */
+        .home-hero {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 450px; /* Adjust this height as needed */
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            background-color: #1a1a1a; /* Fallback color */
+        }
+
+        .slide {
+            position: absolute;
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+            display: flex;
+            align-items: flex-end; /* Pushes text to the bottom */
+            justify-content: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        /* Styles the actual image */
+        .slide-image {
+            position: absolute;
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%;
+            object-fit: cover; /* Ensures the image fills the box without stretching */
+            z-index: -2;
+        }
+
+        /* Adds a dark gradient over the image so text is always readable */
+        .slide-overlay {
+            position: absolute;
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%);
+            z-index: -1;
+        }
+
+        .slide-content {
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 20px;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .slide-content h3 {
+            margin: 0 0 10px 0;
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .slide-content p {
+            margin: 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        }
+
+        /* Basic styling for the slider dots/controls if your script.js uses them */
+        .slider-controls {
+            position: absolute;
+            bottom: 15px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="jidologo.png" alt="JIDO Logo">
+        </div>
+        <nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="members.html">Members</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="tutorials.html">Tutorials</a></li>
+                <li><a href="apply.html">Apply</a></li>
+            </ul>
+        </nav>
+    </header>
+<main>
+        <div class="home-hero">
+            <div class="slider-container" id="dynamic-slider">
+                <div class="slider-controls"></div>
+            </div>
+        </div>
+
+        <div class="section-box club-about">
+            <h2>About JIDO</h2>
+            <p>JIDO is the premier Industrial Automation club at Amrita Vishwa Vidyapeetham, Bengaluru, dedicated to fostering innovation and expertise in the field of automation. Our mission is to empower students with hands-on experience in cutting-edge technologies, bridging the gap between academia and industry. Through workshops, hackathons, industrial visits, projects, and collaboration with industry experts, we aim to equip members with the skills needed to thrive in the evolving landscape of industrial automation.</p>
+        </div>
+
+        <div class="section-box club-details">
+            <h2>Club Foundations</h2>
+            <div class="club-info-grid">
+                <div class="info-card">
+                    <strong style="color: var(--accent);">Affiliated Institute</strong>
+                    <p>Amrita Vishwa Vidyapeetham</p>
+                </div>
+                <div class="info-card">
+                    <strong style="color: var(--accent);">Date of Creation</strong>
+                    <p>2016</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2026 JIDO - The Industrial Automation Club. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
